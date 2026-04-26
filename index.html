@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>改善 Kaizen Daily Sheet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=DM+Mono:wght@300;400;500&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="title-block">
+      <div class="kanji">改善</div>
+      <div class="title-en">Kaizen · Daily Discipline Sheet</div>
+    </div>
+    <div class="date-block">
+      <div class="date-label">Today</div>
+      <div class="date-value" id="date-display"></div>
+      <div class="day-streak">
+        <span class="streak-count" id="streak-num">0</span>
+        day streak
+      </div>
+    </div>
+  </div>
+
+  <div class="quote-bar" id="daily-quote"></div>
+
+  <!-- CAREER -->
+  <div class="section cat-career">
+    <div class="section-header">
+      <div class="section-mark"></div>
+      <div class="section-title">DevOps · Career Growth</div>
+      <div class="section-kanji">職</div>
+    </div>
+    <div class="task" data-id="c1" onclick="toggle(this)">
+      <div class="checkbox"></div>
+      <div class="task-label">Study 1 AWS service / concept (30 min)</div>
+      <div class="task-tag">AWS</div>
+    </div>
+    <div class="task" data-id="c2" onclick="toggle(this)">
+      <div class="checkbox"></div>
+      <div class="task-label">Review monitoring alerts / Grafana dashboards</div>
+      <div class="task-tag">ops</div>
+    </div>
+    <div class="task" data-id="c3" onclick="toggle(this)">
+      <div class="checkbox"></div>
+      <div class="task-label">Write / improve 1 CI/CD pipeline step</div>
+      <div class="task-tag">ci/cd</div>
+    </div>
+    <div class="task" data-id="c4" onclick="toggle(this)">
+      <div class="checkbox"></div>
+      <div class="task-label">Read 1 DevOps article or documentation page</div>
+      <div class="task-tag">learn</div>
+    </div>
+    <div class="task" data-id="c5" onclick="toggle(this)">
+      <div class="checkbox"></div>
+      <div class="task-label">Solve 1 infra problem or client issue at Cloudlaya</div>
+      <div class="task-tag">work</div>
+    </div>
+  </div>
+
+  <!-- PORTFOLIO -->
+  <div class="section cat-portfolio">
+    <div class="section-header">
+      <div class="section-mark"></div>
+      <div class="section-title">Portfolio · System Design</div>
+      <div class="section-kanji">設</div>
+    </div>
+    <div class="task" data-id="p1" onclick="toggle(this)">
+      <div class="checkbox"></div>
+      <div class="task-label">Read 1 system design concept (primer repo)</div>
+      <div class="task-tag">design</div>
+    </div>
+    <div class="task" data-id="p2" onclick="toggle(this)">
+      <div class="checkbox"></div>
+      <div class="task-label">Draw / diagram 1 architecture on paperdraw.dev</div>
+      <div class="task-tag">diagram</div>
+    </div>
+    <div class="task" data-id="p3" onclick="toggle(this)">
+      <div class="checkbox"></div>
+      <div class="task-label">Work on portfolio section (superdesign / code)</div>
+      <div class="task-tag">build</div>
+    </div>
+    <div class="task" data-id="p4" onclick="toggle(this)">
+      <div class="checkbox"></div>
+      <div class="task-label">Push at least 1 commit to GitHub</div>
+      <div class="task-tag">git</div>
+    </div>
+  </div>
+
+  <!-- HEALTH -->
+  <div class="section cat-health">
+    <div class="section-header">
+      <div class="section-mark"></div>
+      <div class="section-title">Health · Body</div>
+      <div class="section-kanji">健</div>
+    </div>
+    <div class="task" data-id="h1" onclick="toggle(this)">
+      <div class="checkbox"></div>
+      <div class="task-label">Morning — wake before 7:00 AM</div>
+      <div class="task-tag">habit</div>
+    </div>
+    <div class="task" data-id="h2" onclick="toggle(this)">
+      <div class="checkbox"></div>
+      <div class="task-label">Exercise — walk / workout (20+ min)</div>
+      <div class="task-tag">move</div>
+    </div>
+    <div class="task" data-id="h3" onclick="toggle(this)">
+      <div class="checkbox"></div>
+      <div class="task-label">No phone for first 30 min after waking</div>
+      <div class="task-tag">mind</div>
+    </div>
+    <div class="task" data-id="h4" onclick="toggle(this)">
+      <div class="checkbox"></div>
+      <div class="task-label">Drink 8 glasses of water</div>
+      <div class="task-tag">body</div>
+    </div>
+    <div class="task" data-id="h5" onclick="toggle(this)">
+      <div class="checkbox"></div>
+      <div class="task-label">Sleep before midnight — no late doom-scroll</div>
+      <div class="task-tag">sleep</div>
+    </div>
+  </div>
+
+  <!-- STUDY -->
+  <div class="section cat-study">
+    <div class="section-header">
+      <div class="section-mark"></div>
+      <div class="section-title">BSc CSIT · Studies</div>
+      <div class="section-kanji">学</div>
+    </div>
+    <div class="task" data-id="s1" onclick="toggle(this)">
+      <div class="checkbox"></div>
+      <div class="task-label">Study 1 chapter / topic from syllabus (45 min)</div>
+      <div class="task-tag">theory</div>
+    </div>
+    <div class="task" data-id="s2" onclick="toggle(this)">
+      <div class="checkbox"></div>
+      <div class="task-label">Solve past questions or practice problems</div>
+      <div class="task-tag">practice</div>
+    </div>
+    <div class="task" data-id="s3" onclick="toggle(this)">
+      <div class="checkbox"></div>
+      <div class="task-label">Work on internship / project report</div>
+      <div class="task-tag">report</div>
+    </div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-section">
+    <div class="progress-label">
+      <span>Daily Progress</span>
+      <span id="progress-text">0 / 17</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="main-bar" style="width:0%"></div>
+    </div>
+
+    <div class="cat-bars">
+      <div class="cat-bar-item">
+        <div class="cat-bar-label">Career</div>
+        <div class="cat-mini-bg"><div class="cat-mini-fill" id="bar-career" style="width:0%;background:var(--indigo)"></div></div>
+        <div class="cat-mini-count" id="count-career">0/5</div>
+      </div>
+      <div class="cat-bar-item">
+        <div class="cat-bar-label">Portfolio</div>
+        <div class="cat-mini-bg"><div class="cat-mini-fill" id="bar-portfolio" style="width:0%;background:var(--moss)"></div></div>
+        <div class="cat-mini-count" id="count-portfolio">0/4</div>
+      </div>
+      <div class="cat-bar-item">
+        <div class="cat-bar-label">Health</div>
+        <div class="cat-mini-bg"><div class="cat-mini-fill" id="bar-health" style="width:0%;background:var(--red)"></div></div>
+        <div class="cat-mini-count" id="count-health">0/5</div>
+      </div>
+      <div class="cat-bar-item">
+        <div class="cat-bar-label">Study</div>
+        <div class="cat-mini-bg"><div class="cat-mini-fill" id="bar-study" style="width:0%;background:var(--gold)"></div></div>
+        <div class="cat-mini-count" id="count-study">0/3</div>
+      </div>
+    </div>
+
+    <div class="reflection">
+      <div class="reflection-label">End of day reflection — what did I learn today?</div>
+      <div class="reflection-lines">
+        <div class="reflection-line"><span>write here...</span></div>
+        <div class="reflection-line"></div>
+        <div class="reflection-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="principle">
+    <strong>Today's Kaizen Principle</strong>
+    <span id="principle-text"></span>
+  </div>
+
+  <button class="reset-btn" onclick="resetAll()">↺ Reset for new day</button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
