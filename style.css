@@ -195,3 +195,93 @@ body::after {
 .task.just-done .checkbox { animation: check-pop 0.2s ease; }
 
 @keyframes flicker { 0%,100% { opacity:1; } 92% { opacity:1; } 93% { opacity:0.8; } 94% { opacity:1; } 96% { opacity:0.9; } 97% { opacity:1; } }
+
+/* ── CSV / LOG ─────────────────────────────────────────────────────────── */
+.csv-bar {
+  display: flex;
+  gap: 10px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.csv-btn {
+  background: transparent;
+  border: 1px solid var(--green-border);
+  padding: 7px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: var(--green);
+  transition: all 0.2s;
+}
+.csv-btn:hover {
+  border-color: var(--green);
+  box-shadow: 0 0 10px rgba(0,255,65,0.2);
+  background: var(--green-faint);
+}
+.csv-btn.secondary {
+  color: var(--text-dim);
+  border-color: var(--text-mute);
+}
+.csv-btn.secondary:hover {
+  color: var(--green);
+  border-color: var(--green-border);
+}
+
+.reset-btn.inline {
+  margin: 0;
+  padding: 7px 14px;
+  font-size: 9px;
+}
+
+/* Log table */
+#log-table-wrap {
+  margin-top: 20px;
+  border: 1px solid var(--green-border);
+  background: var(--bg2);
+  padding: 14px;
+}
+
+.log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.close-log {
+  background: none;
+  border: 1px solid var(--text-mute);
+  color: var(--text-dim);
+  font-size: 10px;
+  padding: 2px 7px;
+  cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+}
+.close-log:hover { border-color: var(--red); color: var(--red); }
+
+.log-tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+  color: var(--text-dim);
+}
+.log-tbl th {
+  text-align: left;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--green-border);
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+.log-tbl td {
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--text-mute);
+  white-space: nowrap;
+}
+.log-tbl tr:hover td { background: var(--green-faint); }
