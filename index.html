@@ -190,7 +190,19 @@
     <span id="principle-text"></span>
   </div>
 
-  <button class="reset-btn" onclick="resetAll()">↺ Reset for new day</button>
+  <div class="csv-bar">
+    <button class="csv-btn" onclick="saveRecordAndExport()">⬇ Export CSV log</button>
+    <button class="csv-btn secondary" onclick="viewLog()">≡ View log (<span id="log-count">0</span> days)</button>
+    <button class="reset-btn inline" onclick="resetAll()">↺ New day</button>
+  </div>
+
+  <div id="log-table-wrap" style="display:none">
+    <div class="log-header">
+      <span class="reflection-label" style="margin:0">// daily log</span>
+      <button class="close-log" onclick="document.getElementById('log-table-wrap').style.display='none'">✕</button>
+    </div>
+    <div id="log-table-inner"></div>
+  </div>
 
 </div>
 
